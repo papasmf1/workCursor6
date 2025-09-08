@@ -1,0 +1,222 @@
+*바이브 코딩을 위한 설치 
+
+*쉽게 사용하는 파이썬 언어: Python 3.10 
+https://www.python.org/downloads/release/python-31011/
+
+
+*비주얼 스튜디오 코드 + Copilot
+https://code.visualstudio.com/
+
+1)GitHub에 개발자 계정이 필요
+2)비주얼 스튜디오 코드에 Copilot익스텐션 설치 
+3)비주얼 스튜디오 코드에서 GitHub계정으로 로그인하면 Copilot사용 가능 
+
+
+*Cursor IDE 
+https://cursor.com/
+
+
+*클로드 코드 설치 방법
+https://docs.anthropic.com/ko/docs/claude-code/overview
+
+전제 조건:
+Node.js 18 이상
+Claude.ai (권장) 또는 Anthropic Console 계정
+
+# Claude Code 설치
+npm install -g @anthropic-ai/claude-code
+
+# 프로젝트로 이동
+cd your-awesome-project
+
+# Claude로 코딩 시작
+claude
+# 첫 사용 시 로그인하라는 메시지가 표시됩니다
+
+
+*구글 제미나이 CLI설치하기
+https://github.com/google-gemini/gemini-cli
+Node.js가 설치되어 있으면 아래와 같이 설치해서 사용한다 
+npm install -g @google/gemini-cli
+
+
+*깃과 깃허브 연동 
+아래와 같이 입력한다. 
+
+------------------------------------
+깃으로 소스를 관리해주고 깃허브에 push해줘
+------------------------------------
+
+github에 로그인해서 workCursor2과 같이 리파지토리를 생성한다. 
+
+주소를 알려주고 연결해 달라고 한다. 
+------------------------------------
+https://github.com/papasmf1/workCursor2
+위의 주소로 연결해줘 
+-----------------------------
+
+todolist폴더를 만들어주고, 오늘의 할일 웹페이지를 만들기 위한 prd.md를 생성해줘 
+
+하나의 작업이 끝나면 매번 커밋을 하고 push를 해줘 
+
+
+Supabase연동을 위한 papasmf3000@gmail.com 계정을 다시 셋팅함 
+
+
+
+------------------------------------
+*UI/UX작업을 위한 shadcn 사용하기 
+간단한 소개
+https://apidog.com/kr/blog/what-is-shadcn-ui-tutorial-kr/
+
+
+1번)Product Requirements Document를 먼저 생성
+to-do-list폴더를 만들고, 오늘의 할일을 관리하는 웹페이지를 만들기 위한 PRD.md파일을 먼저 생성해줘
+
+2번) 
+next.js, typescript, shadcn기반으로 웹 페이지를 만들 준비를 해줘
+npm install 
+npm run dev 
+브라우저 접속: http://localhost:3000
+
+3번)
+New York스타일로 todolist웹페이지의 디자인까지만 구현해줘 
+Default스타일로 변경해줘 
+
+4번)
+mcp에 셋팅된 playwright를 사용해서 자동으로 테스트해줘
+
+
+*Cursor에서 사용할 수 있는 mcp.json 파일: .cursor폴더 아래에 mcp.json파일로 저장  
+{
+    "mcpServers": {
+      "playwright": {
+        "command": "npx",
+        "args": [
+          "@playwright/mcp@latest"
+        ]
+      },
+      "context7": {
+        "url": "https://mcp.context7.com/mcp",
+        "headers": {
+          "CONTEXT7_API_KEY": "YOUR_API_KEY"
+        }
+      }, 
+      "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+      }
+    }
+}
+
+*Cursor에서 사용할 수 있는 superbase mcp셋팅: .cursor라는 폴더에 mcp.json파일을 생성한다. 
+{
+  "mcpServers": {
+    "supabase": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@supabase/mcp-server-supabase@latest",
+        "--read-only",
+        "--project-ref=<project-ref>"
+      ],
+      "env": {
+        "SUPABASE_ACCESS_TOKEN": "<personal-access-token>"
+      }
+    }
+  }
+}
+
+*예를 들면 아래와 같이 수정한다. 
+{
+    "mcpServers": {
+      "supabase": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@supabase/mcp-server-supabase@latest",
+          "--read-only",
+          "--project-ref=https://rikwvinafcosecgmucgb.supabase.co"
+        ],
+        "env": {
+          "SUPABASE_ACCESS_TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJpa3d2aW5hZmNvc2VjZ211Y2diIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYzOTc4NzMsImV4cCI6MjA3MTk3Mzg3M30.A3w8uQfWhxiFCE-98BS7UN5wq3uK-Nbnwdlm4uI66Oo"
+        }
+      }
+    }
+  }
+
+*이렇게 수정을 부탁한다.
+supabase mcp셋팅을 사용해서 이 앱의 데이터 저장을 supabase에 해도록 코드를 수정해줘 
+
+
+*프로젝트 루트에 .env.local파일에 아래와 같이 내용을 입력한다. 
+NEXT_PUBLIC_SUPABASE_URL=주소복사하기 
+NEXT_PUBLIC_SUPABASE_ANON_KEY=엑세스토큰복사힉 
+
+*4개의 mcp가 모두 등록된 경우 아래와 같다.
+{
+    "mcpServers": {
+      "playwright": {
+        "command": "npx",
+        "args": [
+          "@playwright/mcp@latest"
+        ]
+      },
+      "context7": {
+        "url": "https://mcp.context7.com/mcp",
+        "headers": {
+          "CONTEXT7_API_KEY": "YOUR_API_KEY"
+        }
+      }, 
+      "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+      },
+      "supabase": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@supabase/mcp-server-supabase@latest",
+        "--read-only",
+        "--project-ref=주소 복사하기"
+      ],
+      "env": {
+        "SUPABASE_ACCESS_TOKEN": "엑세스 토큰 복사하기"
+      }
+    }
+    }
+}
+
+*파이썬의 크롤링하는 코드 
+1단계)
+https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EB%B0%98%EB%8F%84%EC%B2%B4&ackey=ydsb1fk4
+파이썬에서 BeautifulSoup4를 사용해서 위의 URL주소를 사용해서 신문기사의 제목을  크롤링하는 코드를 생성해줘 
+
+
+(개발자 도구를 사용해서 태그 정보를 알려주고)
+위의 태그 정보를 참조해서 다시 코드를 생성해줘 
+
+2단계)
+파이썬의 PyQt5를 사용해서 GUI형태의 앱으로 코드를 수정해줘 
+
+3단계) 
+엑셀 파일로 저장할 수 있는 기능을 추가해줘 
+
+
+*html5, css3, javascript기반으로 종스크롤되는 제비우스 게임 코드를 생성해줘 
+
+(단계별로 진행할 수 있다.) 
+
+
+
+
+
+
+
+
