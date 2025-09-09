@@ -45,6 +45,9 @@ cmd
 pyinstaller --noconsole --onefile DemoForm2.py
 pyinstaller --onefile Form2.py
 
+*react코드를 실행하려면 node.js가 필요하다. 
+미리 다운로드 받은 파일로 설치한다. 
+node-v22*.msi파일 
 
 *파이썬으로 작성한 코드를 테스트하는 코드를 생성해 달라고 한다. 
 
