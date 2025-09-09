@@ -81,7 +81,8 @@ https://github.com/papasmf1/workCursor2
 위의 주소로 연결해줘 
 -----------------------------
 
-todolist폴더를 만들어주고, 오늘의 할일 웹페이지를 만들기 위한 prd.md를 생성해줘 
+todolist폴더를 만들어주고, 오늘의 할일 웹페이지를 만들기 위한 
+prd.md를 생성해줘 
 
 하나의 작업이 끝나면 매번 커밋을 하고 push를 해줘 
 
@@ -97,7 +98,8 @@ https://apidog.com/kr/blog/what-is-shadcn-ui-tutorial-kr/
 
 
 1번)Product Requirements Document를 먼저 생성
-to-do-list폴더를 만들고, 오늘의 할일을 관리하는 웹페이지를 만들기 위한 PRD.md파일을 먼저 생성해줘
+to-do-list폴더를 만들고, 오늘의 할일을 관리하는 웹페이지를 
+만들기 위한 PRD.md파일을 먼저 생성해줘
 
 2번) 
 next.js, typescript, shadcn기반으로 웹 페이지를 만들 준비를 해줘
@@ -138,7 +140,9 @@ mcp에 셋팅된 playwright를 사용해서 자동으로 테스트해줘
     }
 }
 
-*Cursor에서 사용할 수 있는 superbase mcp셋팅: .cursor라는 폴더에 mcp.json파일을 생성한다. 
+*Cursor에서 사용할 수 있는 superbase mcp셋팅: 
+.cursor라는 폴더에 mcp.json파일을 생성한다. 
+
 {
   "mcpServers": {
     "supabase": {
@@ -235,10 +239,20 @@ https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&qu
 엑셀 파일로 저장할 수 있는 기능을 추가해줘 
 
 
-*html5, css3, javascript기반으로 종스크롤되는 제비우스 게임 코드를 생성해줘 
+*html5, css3, javascript기반으로 종스크롤되는 
+제비우스 게임 코드를 생성해줘 
 
 (단계별로 진행할 수 있다.) 
 
+*무엇을 더 공부해야 하나? 
+프롬프트엔지니어링에 대한 공부가 필요하다. 
+
+https://platform.openai.com/docs/guides/prompt-engineering
+
+https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview
+
+당연히 개발하는 언어와 라이브러리들을 알고 있는 것이 좋다. 
+Git도 코드 생성 관리를 위해 잘 사용해야 한다. 
 
 
 
